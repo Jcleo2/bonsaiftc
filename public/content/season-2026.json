@@ -38,11 +38,11 @@
   ],
 
   "team": [
-    { "name": "Jason", "role_short": "PROGRAMMING", "role_long": "My name is Jason. I have minor FIRST experience through helping with other teams, but this is my first year with BONSAI.exe. I, along with Cliff, program the robot. I hope to have a great season with the team.", "photo": "pngs/team/jason.png" },
-    { "name": "Lucas", "role_short": "DESIGN", "role_long": "My name is Lucas, I’m in the 7th grade, and a team member on BONSAI.exe. I’m the one of the team members who does CAD on the team", "photo": "pngs/team/lucas.png" },
+    { "name": "Jason", "role_short": "PROGRAMMING", "role_long": "My name is Jason. I have limited FIRST experience through helping with other teams, but this is my first year with BONSAI.exe. I, along with Cliff, program the robot. I hope to have a great season with the team.", "photo": "pngs/team/jason.png" },
+    { "name": "Lucas", "role_short": "DESIGN", "role_long": "My name is Lucas. I’m in the 7th grade, and a team member on BONSAI.exe. I’m one of the team members who does CAD.", "photo": "pngs/team/lucas.png" },
     { "name": "Nicholas", "role_short": "BUILD", "role_long": "My name is Nicholas Pu, and I attend Herbert Hoover Middle school. I will be doing hardware and CAD in BONSAI.exe this year.", "photo": "pngs/coaches/nicholas.png" },
-    { "name": "Cliff", "role_short": "PROGRAMMING", "role_long": "My name is Cliff I’m in 8th grade. I will be the driver and also do some software. I have previous experience with software but this will be my first year competing in FTC. I am excited to have a great season with BONSAI.exe", "photo": "pngs/team/cliff.png" },
-    { "name": "Elliott", "role_short": "BUILD", "role_long": "My name is Elliott Kuo, 8th grader at Robert Frost Middle School. I will be a part of our hardware team this year, and I'm so excited for our first FTC season.", "photo": "pngs/team/elliot.png" }
+    { "name": "Cliff", "role_short": "PROGRAMMING", "role_long": "My name is Cliff. I’m in 8th grade. I will be the driver and also do some software. I have previous experience with software, but this will be my first year competing in FTC. I am excited to have a great season with BONSAI.exe.", "photo": "pngs/team/cliff.png" },
+    { "name": "Elliott", "role_short": "BUILD", "role_long": "My name is Elliott Kuo. I'm an 8th grader at Robert Frost Middle School. I will be a part of our hardware team this year, and I'm so excited for our first FTC season.", "photo": "pngs/team/elliot.png" }
   ],
   "portfolio": {
     "published": false,
