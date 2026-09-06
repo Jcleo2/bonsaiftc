@@ -1,0 +1,29 @@
+{
+  "published": false,
+  "portfolio_items": [
+    {
+      "kicker": "PROTOTYPE",
+      "title": "Autonomous Drive Lab",
+      "text": "A testing platform for motion control, field awareness, and rapid iteration on navigation logic.",
+      "image": "pngs/portfolio/drive_lab.png",
+      "pdf": "pdfs/drivebase-review.pdf"
+    },
+    {
+      "kicker": "SYSTEMS",
+      "title": "Design Iteration Pipeline",
+      "text": "From concept sketches to CAD review, our team built a repeatable process for evaluating trade-offs early.",
+      "image": "pngs/portfolio/pipeline.png",
+      "pdf": null
+    },
+    {
+      "kicker": "TEAMWORK",
+      "title": "Build & Test Cycles",
+      "text": "Short feedback loops helped the team rapidly compare mechanical layouts, improve reliability, and learn faster.",
+      "image": "pngs/portfolio/buildtest.png",
+      "pdf": null
+    }
+  ],
+  "pdfs": [
+    { "title": "Drivebase Review", "path": "pdfs/drivebase-review.pdf", "pages": 4 }
+  ]
+}

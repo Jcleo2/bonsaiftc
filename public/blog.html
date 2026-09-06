@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BONSAI.exe Blog</title>
+  <meta name="description" content="BONSAI.exe blog and engineering updates, outreach notes, and downloadable PDFs." />
+  <style>
+    :root {
+      --obsidian: #0a0b0a;
+      --obsidian-2: #111412;
+      --obsidian-3: #181c18;
+      --sage: #7a9e7e;
+      --sage-dim: #4a6b4e;
+      --sage-glow: rgba(122,158,126,0.12);
+      --emerald: #2d9e5f;
+      --gold: #c1a56d;
+      --gold-dim: rgba(193,165,109,0.12);
+      --ivory: #f0ede6;
+      --ivory-dim: #a8a49e;
+      --border: rgba(122,158,126,0.18);
+      --border-dim: rgba(122,158,126,0.08);
+      --ff-sans: 'Inter', 'SF Pro Display', system-ui, sans-serif;
+      --ff-mono: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
+      --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--obsidian);
+      color: var(--ivory);
+      font-family: var(--ff-sans);
+      line-height: 1.6;
+    }
+    a { color: inherit; }
+
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 20px 40px; background: rgba(10,11,10,0.85);
+      backdrop-filter: blur(12px); border-bottom: 1px solid var(--border-dim);
+    }
+    .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+    .nav-logo-mark { width: 28px; height: 28px; }
+    .nav-logo-mark svg { width: 100%; height: 100%; }
+    .nav-logo-text { font-size: 13px; letter-spacing: 0.12em; }
+    .nav-logo-sub {
+      font-family: var(--ff-mono); font-size: 9px; letter-spacing: 0.2em;
+      color: var(--gold);
+    }
+    .nav-links {
+      display: flex; gap: 28px; list-style: none; flex-wrap: wrap;
+      justify-content: center;
+    }
+    .nav-links a {
+      font-family: var(--ff-mono); font-size: 10px; letter-spacing: 0.16em;
+      color: var(--ivory-dim); text-decoration: none; transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--gold); }
+    .nav-cta {
+      font-family: var(--ff-mono); font-size: 10px; letter-spacing: 0.16em;
+      text-decoration: none; padding: 10px 18px; border: 1px solid var(--border);
+      color: var(--ivory); transition: background 0.2s, border-color 0.2s;
+    }
+    .nav-cta:hover {
+      border-color: var(--gold); background: rgba(193,165,109,0.08);
+    }
+
+    main { max-width: 1200px; margin: 0 auto; padding: 72px 24px 120px; }
+    .hero {
+      padding: 48px 0 32px; border-bottom: 1px solid var(--border-dim);
+      margin-bottom: 48px;
+    }
+    .eyebrow {
+      font-family: var(--ff-mono); font-size: 10px; color: var(--gold);
+      letter-spacing: 0.28em; text-transform: uppercase; margin-bottom: 16px;
+    }
+    h1 {
+      font-size: clamp(42px, 7vw, 88px); line-height: 0.95; letter-spacing: -0.04em;
+      font-weight: 300; margin-bottom: 18px;
+    }
+    h1 strong { color: var(--gold); font-weight: 700; }
+    .hero-copy {
+      max-width: 720px; color: var(--ivory-dim); font-size: 18px; line-height: 1.7;
+    }
+
+    .articles {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px; margin-top: 32px;
+    }
+    .article {
+      background: rgba(255,255,255,0.01); border: 1px solid var(--border-dim);
+      padding: 22px; transition: border-color 0.2s, transform 0.2s;
+    }
+    .article:hover { border-color: var(--border); transform: translateY(-2px); }
+    .article-meta {
+      display: flex; justify-content: space-between; gap: 10px; align-items: center;
+      color: var(--ivory-dim); font-family: var(--ff-mono); font-size: 9px;
+      letter-spacing: 0.18em; margin-bottom: 18px;
+    }
+    .tag {
+      display: inline-block; border: 1px solid var(--gold-dim); color: var(--gold);
+      padding: 6px 8px; font-family: var(--ff-mono); font-size: 9px; letter-spacing: 0.15em;
+    }
+    .article h2 {
+      font-size: 26px; line-height: 1.2; margin-bottom: 12px; font-weight: 600;
+    }
+    .article p {
+      color: var(--ivory-dim); margin-bottom: 18px; font-size: 15px; line-height: 1.7;
+    }
+    .article-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+    .button {
+      display: inline-block; text-decoration: none; border: 1px solid var(--border);
+      padding: 11px 16px; font-family: var(--ff-mono); font-size: 10px;
+      letter-spacing: 0.15em; color: var(--ivory); transition: border-color 0.2s, background 0.2s;
+    }
+    .button:hover { border-color: var(--gold); background: rgba(193,165,109,0.08); }
+    .button.primary {
+      background: linear-gradient(135deg, rgba(193,165,109,0.18), rgba(122,158,126,0.12));
+      border-color: rgba(193,165,109,0.35);
+    }
+
+    .pdf-panel {
+      margin-top: 72px; padding-top: 32px; border-top: 1px solid var(--border-dim);
+    }
+    .pdf-list {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 18px; margin-top: 24px;
+    }
+    .pdf-item {
+      display: flex; justify-content: space-between; align-items: center; gap: 16px;
+      border: 1px solid var(--border-dim); background: rgba(255,255,255,0.01); padding: 16px 18px;
+    }
+    .pdf-item strong { font-size: 14px; }
+    .pdf-item span {
+      font-family: var(--ff-mono); font-size: 9px; letter-spacing: 0.14em; color: var(--ivory-dim);
+    }
+
+    footer {
+      border-top: 1px solid var(--border-dim); padding: 28px 24px 40px; margin-top: 60px;
+      display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap;
+      color: var(--ivory-dim); font-family: var(--ff-mono); font-size: 10px; letter-spacing: 0.15em;
+    }
+    @media (max-width: 768px) {
+      nav { padding: 16px 20px; }
+      .nav-links { display: none; }
+      .nav-cta { display: none; }
+      .mobile-nav-toggle {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 42px; height: 42px;
+        border: 1px solid var(--border);
+        background: rgba(255,255,255,0.02);
+        border-radius: 10px;
+        color: var(--ivory);
+        cursor: pointer;
+        padding: 0;
+      }
+      .mobile-nav-toggle span,
+      .mobile-nav-toggle::before,
+      .mobile-nav-toggle::after {
+        content: ""; display: block; width: 18px; height: 2px; background: var(--ivory); border-radius: 99px; position: relative; transition: transform 0.2s ease, opacity 0.2s ease;
+      }
+      .mobile-nav-toggle::before { position: absolute; transform: translateY(-6px); }
+      .mobile-nav-toggle::after { position: absolute; transform: translateY(6px); }
+      .mobile-nav-toggle[aria-expanded="true"] span { opacity: 0; }
+      .mobile-nav-toggle[aria-expanded="true"]::before { transform: rotate(45deg); }
+      .mobile-nav-toggle[aria-expanded="true"]::after { transform: rotate(-45deg); }
+      .mobile-nav-panel {
+        position: absolute; top: calc(100% + 10px); left: 20px; right: 20px; display: none;
+        background: rgba(10,11,10,0.96); border: 1px solid var(--border); border-radius: 14px; padding: 16px; box-shadow: 0 16px 32px rgba(0,0,0,0.28);
+      }
+      .mobile-nav-panel.open { display: block; }
+      .mobile-nav-panel a {
+        display: block; padding: 12px 0; color: var(--ivory); text-decoration: none; font-family: var(--ff-mono); font-size: 11px; letter-spacing: 0.18em; border-bottom: 1px solid var(--border-dim);
+      }
+      .mobile-nav-panel a:last-child { border-bottom: 0; }
+    }
+    @media (min-width: 769px) {
+      .mobile-nav-toggle { display: none; }
+      .mobile-nav-panel { display: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="index.html" class="nav-logo">
+      <div class="nav-logo-mark">
+        <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <polygon points="16,2 30,10 30,22 16,30 2,22 2,10" fill="none" stroke="#7a9e7e" stroke-width="1"/>
+          <polygon points="16,8 24,12 24,20 16,24 8,20 8,12" fill="none" stroke="#2d9e5f" stroke-width="0.5" opacity="0.6"/>
+          <circle cx="16" cy="16" r="3" fill="#7a9e7e"/>
+          <line x1="16" y1="2" x2="16" y2="8" stroke="#c1a56d" stroke-width="0.5"/>
+        </svg>
+      </div>
+      <div>
+        <div class="nav-logo-text">BONSAI.exe</div>
+        <div class="nav-logo-sub">FTC ROBOTICS</div>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html#robot-section">ROBOT</a></li>
+      <li><a href="index.html#portfolio-section">PORTFOLIO</a></li>
+      <li><a href="blog.html">BLOG</a></li>
+      <li><a href="coaches.html">COACHES</a></li>
+      <li><a href="index.html#impact-section">IMPACT</a></li>
+      <li><a href="index.html#team-section">TEAM</a></li>
+      <li><a href="index.html#compete-section">COMPETE</a></li>
+    </ul>
+    <a class="nav-cta" href="index.html#buildlog-section">FOLLOW BUILD →</a>
+    <button class="mobile-nav-toggle" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-nav-panel">
+      <span></span>
+    </button>
+    <div class="mobile-nav-panel" id="mobile-nav-panel" aria-label="Mobile navigation">
+      <a href="index.html#robot-section">ROBOT</a>
+      <a href="index.html#portfolio-section">PORTFOLIO</a>
+      <a href="blog.html">BLOG</a>
+      <a href="coaches.html">COACHES</a>
+      <a href="index.html#impact-section">IMPACT</a>
+      <a href="index.html#team-section">TEAM</a>
+      <a href="index.html#compete-section">COMPETE</a>
+    </div>
+  </nav>
+
+  <main>
+    <header class="hero">
+      <div class="eyebrow">BLOG / NOTES / UPDATES</div>
+      <h1>Lessons from the build,<br><strong>shared in public.</strong></h1>
+      <p class="hero-copy">A place for our season updates, engineering reflections, team stories, and downloadable PDFs from our workshops, design reviews, and outreach work.</p>
+    </header>
+
+    <section class="articles" id="blog-articles">
+      <!-- Blog articles are loaded from site-data.json. Edit site-data.json to change posts. -->
+    </section>
+
+    <script>
+    // Load blog posts exclusively from central content file
+    (async function(){
+      try{
+        const content = await (await fetch('content/season-2026.json')).json();
+        const posts = (content.blog && content.blog.posts) || [];
+        const container = document.getElementById('blog-articles');
+        if (!container) return;
+        if (posts.length === 0) {
+          container.innerHTML = '<div style="color:var(--ivory-dim);">No posts yet. Edit <strong>content/season-2026.json</strong> to add blog entries.</div>';
+          return;
+        }
+        container.innerHTML = posts.map(p => `
+          <article class="article">
+            <div class="article-meta"><span>${p.date || ''}</span><span class="tag">POST</span></div>
+            <h2>${p.title}</h2>
+            <p>${p.summary || ''}</p>
+            <div class="article-actions">
+              <a href="index.html#buildlog-section" class="button">READ UPDATE</a>
+            </div>
+          </article>
+        `).join('');
+      }catch(e){
+        const container = document.getElementById('blog-articles'); if (container) container.innerHTML = '<div style="color:var(--ivory-dim);">Unable to load blog posts.</div>';
+      }
+    })();
+
+    const navToggle = document.querySelector('.mobile-nav-toggle');
+    const navPanel = document.getElementById('mobile-nav-panel');
+    if (navToggle && navPanel) {
+      navToggle.addEventListener('click', () => {
+        const open = navPanel.classList.toggle('open');
+        navToggle.setAttribute('aria-expanded', String(open));
+      });
+      navPanel.querySelectorAll('a').forEach((link) => {
+        link.addEventListener('click', () => {
+          navPanel.classList.remove('open');
+          navToggle.setAttribute('aria-expanded', 'false');
+        });
+      });
+    }
+    </script>
+
+    <!-- PDF downloads have been moved to the Portfolio section. See index.html#portfolio-section -->
+  </main>
+
+  <footer>
+    <div><strong>BONSAI.exe</strong> • FTC ROBOTICS</div>
+    <div>SEASON 2026</div>
+  </footer>
+</body>
+</html>

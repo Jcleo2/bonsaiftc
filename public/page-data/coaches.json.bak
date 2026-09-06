@@ -1,0 +1,7 @@
+{
+  "team": [
+    { "name": "Coach Walker", "role": "HEAD COACH", "bio": "Leads the team’s direction, builds accountability, and supports long-term strategy.", "photo": "pngs/coaches/walker.png" },
+    { "name": "Alex Morgan", "role": "MECHANICAL MENTOR", "bio": "Guides drivetrain and structural design.", "photo": "pngs/coaches/morgan.png" },
+    { "name": "Dr. Patel", "role": "PROGRAMMING COACH", "bio": "Supports software architecture and autonomous systems.", "photo": "pngs/coaches/patel.png" }
+  ]
+}

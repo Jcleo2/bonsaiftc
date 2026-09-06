@@ -1,0 +1,49 @@
+{
+  "generated_at": "2026-09-02T23:40:27Z",
+  "pages": [
+    {
+      "url": "3000/python3",
+      "page": "python3",
+      "fetched_at": "2026-09-02T23:40:27Z",
+      "status": null,
+      "title": null,
+      "images": [],
+      "errors": [
+        "Invalid URL '3000/python3': No scheme supplied. Perhaps you meant https://3000/python3?"
+      ]
+    },
+    {
+      "url": "3000/-m",
+      "page": "-m",
+      "fetched_at": "2026-09-02T23:40:27Z",
+      "status": null,
+      "title": null,
+      "images": [],
+      "errors": [
+        "Invalid URL '3000/-m': No scheme supplied. Perhaps you meant https://3000/-m?"
+      ]
+    },
+    {
+      "url": "3000/http.server",
+      "page": "http.server",
+      "fetched_at": "2026-09-02T23:40:27Z",
+      "status": null,
+      "title": null,
+      "images": [],
+      "errors": [
+        "Invalid URL '3000/http.server': No scheme supplied. Perhaps you meant https://3000/http.server?"
+      ]
+    },
+    {
+      "url": "3000/3000",
+      "page": "3000",
+      "fetched_at": "2026-09-02T23:40:27Z",
+      "status": null,
+      "title": null,
+      "images": [],
+      "errors": [
+        "Invalid URL '3000/3000': No scheme supplied. Perhaps you meant https://3000/3000?"
+      ]
+    }
+  ]
+}

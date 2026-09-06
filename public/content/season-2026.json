@@ -1,0 +1,92 @@
+{
+  "season": "2026",
+  "title": "BONSAI.exe",
+  "visibility": {
+    "portfolio": false,
+    "team": true,
+    "phases": true,
+    "buildlog": true,
+    "community": false,
+    "outreach": false
+  },
+  "journey_phases": [
+    { "order": 1, "slug": "initialization", "title": "INITIALIZATION", "description": "First Team meeting, figuring out parts, determining strategies.", "status": "active" },
+    { "order": 2, "slug": "design", "title": "DESIGN", "description": " Game released. CAD, prototyping strategy, and early system decisions.", "status": "planned" },
+    { "order": 3, "slug": "build", "title": "BUILD", "description": "Fabrication, iteration, testing, and revision.", "status": "planned" },
+    { "order": 4, "slug": "compete", "title": "COMPETE", "description": "Regional qualifier and championship events.", "status": "planned" },
+    { "order": 5, "slug": "archive", "title": "ARCHIVE", "description": "Season documented. Lessons captured. Next year begins.", "status": "planned" }
+  ],
+  "engineering_note": "No design commitment has been made. This is intentional. Premature commitment to a concept is how teams end up rebuilding in Week 5.",
+  "engineering_log": [
+    {
+      "date": "2026-08-30",
+      "title": "Season Kickoff",
+      "phase": "INITIALIZATION",
+      "status": "INIT",
+      "notes": "BONSAI.exe team kickoff meeting. Introduced the game, discussed strategies, and assigned initial roles.",
+      "pending": ["First CAD", "Prototype 01", "First Competition"]
+    }
+  ],
+  "coaches": [
+    { "name": "Coach Michael", "role": "Coach", "bio": "I’m a science guy at heart, with a background in biotechnology and cancer research, but I’m just as passionate about coaching and helping young people discover what they’re capable of. Outside of work, I’m an Assistant Scoutmaster and volleyball coach, and I love great food, travel, and new adventures. Fun fact: I once made it into the Guinness Book of World Records for helping make the world’s longest sushi roll! I’m super excited to be part of Bonsai.exe this season and can’t wait to see what this team can accomplish together, building, experimenting, tackling challenges, learning from our mistakes, and most importantly, having a ton of fun along the way!", "photo": "images/coaches/coachmichael.png" },
+    { "name": "Coach Amy", "role": "Coach", "bio": " I have an undergraduate degree in engineering, but have worked in finance for the past 30 years. I am super excited to be part of this amazing group of teens and coaches.", "photo": "images/coaches/amy.png" },
+    { "name": "Coach Steven", "role": "Coach", "bio": "Hi, I'm Steven. I like building things. Built some startups, exited a few, trying to build more. Spent years as a strategy consultant. Worked extensively in the US and China. Trained as an electrical engineer but can barely change a light bulb. What I work on now: Doodling with LLMs, building prototypes in a range of fields, such as agentic overlays for legacy ERP systems, neural knowledge retention for research labs, agentic assistants for skilled tradesmen, etc. Let's see what works out.", "photo": "images/coaches/steven.png" },
+    { "name": "Joel", "role": "Mentor", "bio": "TBD", "photo": "pngs/coaches/scout.png" },
+    { "name": "Izzy", "role": "Mentor", "bio": "This is my 4th year of being a programmer in FTC and I'm on team 19458 Equilibrium.exe.", "photo": "pngs/coaches/izzy.png" },
+    { "name": "Owen", "role": "Mentor", "bio": "TBD", "photo": "pngs/coaches/patel.png" },
+    { "name": "Thomas", "role": "Mentor", "bio": "TBD", "photo": "pngs/coaches/morgan.png" }
+  ],
+
+  "team": [
+    { "name": "Jason", "role_short": "PROGRAMMING", "role_long": "My name is Jason. I have minor FIRST experience through helping with other teams, but this is my first year with BONSAI.exe. I, along with Cliff, program the robot. I hope to have a great season with the team.", "photo": "pngs/team/jason.png" },
+    { "name": "Lucas", "role_short": "DESIGN", "role_long": "My name is Lucas, I’m in the 7th grade, and a team member on BONSAI.exe. I’m the one of the team members who does CAD on the team", "photo": "pngs/team/lucas.png" },
+    { "name": "Nicholas", "role_short": "BUILD", "role_long": "My name is Nicholas Pu, and I attend Herbert Hoover Middle school. I will be doing hardware and CAD in BONSAI.exe this year.", "photo": "pngs/coaches/nicholas.png" },
+    { "name": "Cliff", "role_short": "PROGRAMMING", "role_long": "My name is Cliff I’m in 8th grade. I will be the driver and also do some software. I have previous experience with software but this will be my first year competing in FTC. I am excited to have a great season with Bonsai.exe", "photo": "pngs/team/cliff.png" },
+    { "name": "Elliott", "role_short": "BUILD", "role_long": "My name is Elliott Kuo, 8th grader at Robert Frost Middle School. I will be a part of our hardware team this year, and i'm so excited for our first FTC season.", "photo": "pngs/team/elliot.png" }
+  ],
+  "portfolio": {
+    "published": false,
+    "items": [
+      { "kicker": "PROTOTYPE", "title": "Autonomous Drive Lab", "text": "A testing platform for motion control, field awareness, and rapid iteration on navigation logic.", "image": "pngs/portfolio/drive_lab.png", "pdf": "pdfs/drivebase-review.pdf" },
+      { "kicker": "SYSTEMS", "title": "Design Iteration Pipeline", "text": "From concept sketches to CAD review, our team built a repeatable process for evaluating trade-offs early.", "image": "pngs/portfolio/pipeline.png", "pdf": null },
+      { "kicker": "TEAMWORK", "title": "Build & Test Cycles", "text": "Short feedback loops helped the team rapidly compare mechanical layouts, improve reliability, and learn faster.", "image": "pngs/portfolio/buildtest.png", "pdf": null }
+    ],
+    "pdfs": [
+      { "title": "Drivebase Review", "path": "pdfs/drivebase-review.pdf", "pages": 4 }
+    ]
+  },
+  "blog": {
+    "posts": [
+      { "title": "Mock Season Done", "date": "2026-08-06", "summary": "Mock Season Done. Thanks to Equilibrium.exe and everyone else for hosting!", "image": "pngs/blog/season_kickoff.png" },
+      { "title": "First Meeting", "date": "2026-08-30", "summary": "Our first meeting and goals.", "image": "pngs/blog/community_workshop.png" }
+    ]
+  },
+  "gallery": {
+    "showCaptions": true,
+    "images": [
+      { "src": "pngs/gallery/shot1.png", "caption": "The first build meeting." },
+      { "src": "pngs/gallery/shot2.png", "caption": "Design review and strategy chat." },
+      { "src": "pngs/gallery/shot3.png", "caption": "Robot concept inspiration board." },
+      { "src": "pngs/gallery/shot4.png", "caption": "Testing setup in progress." },
+      { "src": "pngs/gallery/shot5.png", "caption": "Team progress snapshot." },
+      { "src": "pngs/gallery/shot6.png", "caption": "Early fabrication work." }
+    ]
+  },
+  "outreach": {
+    "images": ["pngs/outreach/meeting1.png"],
+    "notes": "Outreach efforts and local STEM activities."
+  },
+  "community": {
+    "students_reached": 0,
+    "local_events": 0,
+    "volunteer_energy": "0%",
+    "notes": [
+      "gotta do this at some point"
+    ]
+  },
+  "competition": {
+    "next_event": "Regional Qualifier",
+    "next_event_date": null,
+    "season_record": { "matches": null, "wins": null, "awards": null }
+  }
+}

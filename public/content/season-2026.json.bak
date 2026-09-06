@@ -1,0 +1,60 @@
+{
+  "season": "2026",
+  "title": "BONSAI.exe",
+  "visibility": {
+    "portfolio": false,
+    "team": true,
+    "phases": true,
+    "buildlog": true,
+    "community": true
+  },
+  "journey_phases": [
+    { "order": 1, "slug": "initialization", "title": "INITIALIZATION", "description": "Team assembled. Season game released. Design process begins." },
+    { "order": 2, "slug": "design", "title": "DESIGN", "description": "CAD, prototyping strategy, and early system decisions." },
+    { "order": 3, "slug": "build", "title": "BUILD", "description": "Fabrication, iteration, testing, and revision." },
+    { "order": 4, "slug": "compete", "title": "COMPETE", "description": "Regional qualifier and championship events." },
+    { "order": 5, "slug": "archive", "title": "ARCHIVE", "description": "Season documented. Lessons captured. Next year begins." }
+  ],
+  "engineering_log": [
+    {
+      "date": "2026-08-30",
+      "title": "Season Kickoff",
+      "phase": "INITIALIZATION",
+      "status": "INIT",
+      "notes": "The 2026 FTC season has officially started. The team gathered to watch the game reveal, analyze the challenge, and begin strategic discussions about robot design priorities. Initial analysis suggests the game rewards both precision scoring and efficient cycle times. The team is debating three distinct robot concepts before committing to a design direction. ENGINEERING NOTE: No design commitment has been made. This is intentional. Premature commitment to a concept is how teams end up rebuilding in Week 5.",
+      "pending": ["First CAD", "Prototype 01", "First Competition"]
+    }
+  ],
+  "team": [
+    { "name": "Jason", "role_short": "CAPTAIN", "role_long": "Coordinates between all subteams and drives design decisions.", "photo": "pngs/coaches/walker.png" },
+    { "name": "Lucas", "role_short": "DESIGN", "role_long": "Onshape modeling and assembly management.", "photo": "pngs/coaches/morgan.png" },
+    { "name": "Nicholas", "role_short": "BUILD", "role_long": "Assembles the robot and makes sure every aspect of our robot is working.", "photo": "pngs/coaches/patel.png" },
+    { "name": "Cliff", "role_short": "PROGRAMMING", "role_long": "Building our autonomous and TeleOp systems.", "photo": "pngs/coaches/software.png" },
+    { "name": "Elliott", "role_short": "BUILD", "role_long": "Assembles the robot and makes sure every aspect of our robot is working.", "photo": "pngs/coaches/scout.png" }
+  ],
+  "portfolio": {
+    "items": [
+      { "kicker": "PROTOTYPE", "title": "Autonomous Drive Lab", "text": "A testing platform for motion control, field awareness, and rapid iteration on navigation logic.", "image": "pngs/portfolio/drive_lab.png", "pdf": "pdfs/drivebase-review.pdf" },
+      { "kicker": "SYSTEMS", "title": "Design Iteration Pipeline", "text": "From concept sketches to CAD review, our team built a repeatable process for evaluating trade-offs early.", "image": "pngs/portfolio/pipeline.png", "pdf": null },
+      { "kicker": "TEAMWORK", "title": "Build & Test Cycles", "text": "Short feedback loops helped the team rapidly compare mechanical layouts, improve reliability, and learn faster.", "image": "pngs/portfolio/buildtest.png", "pdf": null }
+    ],
+    "pdfs": [
+      { "title": "Drivebase Review", "path": "pdfs/drivebase-review.pdf", "pages": 4 }
+    ]
+  },
+  "community": {
+    "students_reached": 120,
+    "local_events": 8,
+    "volunteer_energy": "100%",
+    "notes": [
+      "Hosted mentorship sessions for younger students learning CAD, fabrication basics, and robot design thinking.",
+      "Partnered with local schools and community groups to create accessible STEM opportunities.",
+      "Shared our robot build process with the public through demos, classroom visits, and volunteer-led workshops."
+    ]
+  },
+  "competition": {
+    "next_event": "Regional Qualifier",
+    "next_event_date": null,
+    "season_record": { "matches": null, "wins": null, "awards": null }
+  }
+}

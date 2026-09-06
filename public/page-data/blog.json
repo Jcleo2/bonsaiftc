@@ -1,0 +1,7 @@
+{
+  "posts": [
+    { "title": "Season Kickoff", "date": "2026-08-01", "summary": "Our first meeting and goals.", "image": "pngs/blog/season_kickoff.png" },
+    { "title": "Community Workshop", "date": "2026-08-15", "summary": "Hosted a local STEM outreach workshop.", "image": "pngs/blog/community_workshop.png" },
+    { "title": "Drivebase Concept Review", "date": "2026-07-20", "summary": "Comparing drivetrain concepts and trade-offs.", "image": "pngs/blog/drivebase_review.png" }
+  ]
+}

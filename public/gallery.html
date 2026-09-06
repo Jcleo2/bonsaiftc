@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BONSAI.exe Gallery</title>
+  <meta name="description" content="BONSAI.exe gallery and team progress snapshots as we begin our FTC season." />
+  <style>
+    :root {
+      --obsidian: #0a0b0a;
+      --obsidian-2: #111412;
+      --obsidian-3: #181c18;
+      --sage: #8aa88a;
+      --sage-dim: #4d6f4f;
+      --sage-glow: rgba(138,168,138,0.12);
+      --emerald: #3aa568;
+      --gold: #b9a06a;
+      --gold-dim: rgba(185,160,106,0.12);
+      --ivory: #f0ede6;
+      --ivory-dim: #a8a49e;
+      --border: rgba(138,168,138,0.2);
+      --border-dim: rgba(138,168,138,0.08);
+      --ff-sans: 'Inter', 'SF Pro Display', system-ui, sans-serif;
+      --ff-mono: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--obsidian);
+      color: var(--ivory);
+      font-family: var(--ff-sans);
+      line-height: 1.6;
+    }
+    a { color: inherit; }
+    nav {
+      position: sticky; top: 0; z-index: 20; display: flex; align-items: center; justify-content: space-between;
+      padding: 20px 40px; background: rgba(10,11,10,0.85); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border-dim);
+    }
+    .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+    .nav-logo-mark { width: 28px; height: 28px; }
+    .nav-logo-mark svg { width: 100%; height: 100%; }
+    .nav-logo-text { font-size: 13px; letter-spacing: 0.12em; }
+    .nav-logo-sub { font-family: var(--ff-mono); font-size: 9px; letter-spacing: 0.2em; color: var(--sage); }
+    .nav-links { list-style: none; display: flex; gap: 26px; flex-wrap: wrap; }
+    .nav-links a { text-decoration: none; font-family: var(--ff-mono); font-size: 10px; letter-spacing: 0.16em; color: var(--ivory-dim); }
+    .nav-links a:hover { color: var(--sage); }
+    .nav-cta {
+      font-family: var(--ff-mono); font-size: 10px; letter-spacing: 0.16em; color: var(--ivory);
+      text-decoration: none; padding: 10px 18px; border: 1px solid var(--border); transition: border-color 0.2s, background 0.2s;
+    }
+    .nav-cta:hover { border-color: var(--sage); background: rgba(138,168,138,0.1); }
+
+    main { max-width: 1200px; margin: 0 auto; padding: 72px 24px 120px; }
+    .hero { border-bottom: 1px solid var(--border-dim); padding-bottom: 32px; margin-bottom: 48px; }
+    .eyebrow {
+      font-family: var(--ff-mono); font-size: 10px; letter-spacing: 0.28em; color: var(--sage); text-transform: uppercase; margin-bottom: 16px;
+    }
+    h1 {
+      font-size: clamp(40px, 7vw, 82px); line-height: 0.94; font-weight: 300; letter-spacing: -0.04em; margin-bottom: 20px;
+    }
+    h1 strong { color: var(--sage); font-weight: 700; }
+    .hero-copy { font-size: 18px; max-width: 700px; color: var(--ivory-dim); }
+
+    .empty-state {
+      margin-top: 36px; border: 1px solid var(--border-dim); background: rgba(255,255,255,0.01); padding: 28px;
+    }
+    .empty-state h2 {
+      font-size: 26px; margin-bottom: 8px; font-weight: 600;
+    }
+    .empty-state p {
+      color: var(--ivory-dim); max-width: 760px; line-height: 1.75;
+    }
+
+    .gallery-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px; margin-top: 48px;
+    }
+    .photo-card {
+      aspect-ratio: 4 / 5; border: 1px solid var(--border-dim); background: linear-gradient(180deg, rgba(138,168,138,0.06), rgba(255,255,255,0.01));
+      display: flex; align-items: center; justify-content: center; color: var(--ivory-dim); font-family: var(--ff-mono); letter-spacing: 0.16em; font-size: 10px; text-transform: uppercase;
+      position: relative; overflow: hidden;
+    }
+    .photo-card::before {
+      content: 'Coming soon'; position: absolute; inset: auto 16px 16px 16px; padding: 8px 10px; border: 1px solid var(--border); background: rgba(10,11,10,0.6);
+    }
+    .photo-card::after {
+      content: ''; position: absolute; inset: 18px; border: 1px solid var(--border-dim);
+    }
+
+    footer {
+      border-top: 1px solid var(--border-dim); padding: 28px 24px 40px; margin-top: 60px;
+      display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; color: var(--ivory-dim); font-family: var(--ff-mono); font-size: 10px; letter-spacing: 0.15em;
+    }
+    @media (max-width: 768px) {
+      nav { padding: 16px 20px; }
+      .nav-links { display: none; }
+      .nav-cta { display: none; }
+      .mobile-nav-toggle {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 42px; height: 42px;
+        border: 1px solid var(--border);
+        background: rgba(255,255,255,0.02);
+        border-radius: 10px;
+        color: var(--ivory);
+        cursor: pointer;
+        padding: 0;
+      }
+      .mobile-nav-toggle span,
+      .mobile-nav-toggle::before,
+      .mobile-nav-toggle::after {
+        content: ""; display: block; width: 18px; height: 2px; background: var(--ivory); border-radius: 99px; position: relative; transition: transform 0.2s ease, opacity 0.2s ease;
+      }
+      .mobile-nav-toggle::before { position: absolute; transform: translateY(-6px); }
+      .mobile-nav-toggle::after { position: absolute; transform: translateY(6px); }
+      .mobile-nav-toggle[aria-expanded="true"] span { opacity: 0; }
+      .mobile-nav-toggle[aria-expanded="true"]::before { transform: rotate(45deg); }
+      .mobile-nav-toggle[aria-expanded="true"]::after { transform: rotate(-45deg); }
+      .mobile-nav-panel {
+        position: absolute; top: calc(100% + 10px); left: 20px; right: 20px; display: none;
+        background: rgba(10,11,10,0.96); border: 1px solid var(--border); border-radius: 14px; padding: 16px; box-shadow: 0 16px 32px rgba(0,0,0,0.28);
+      }
+      .mobile-nav-panel.open { display: block; }
+      .mobile-nav-panel a {
+        display: block; padding: 12px 0; color: var(--ivory); text-decoration: none; font-family: var(--ff-mono); font-size: 11px; letter-spacing: 0.18em; border-bottom: 1px solid var(--border-dim);
+      }
+      .mobile-nav-panel a:last-child { border-bottom: 0; }
+    }
+    @media (min-width: 769px) {
+      .mobile-nav-toggle { display: none; }
+      .mobile-nav-panel { display: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="index.html" class="nav-logo">
+      <div class="nav-logo-mark">
+        <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <polygon points="16,2 30,10 30,22 16,30 2,22 2,10" fill="none" stroke="#7a9e7e" stroke-width="1"/>
+          <polygon points="16,8 24,12 24,20 16,24 8,20 8,12" fill="none" stroke="#3aa568" stroke-width="0.5" opacity="0.6"/>
+          <circle cx="16" cy="16" r="3" fill="#7a9e7e"/>
+        </svg>
+      </div>
+      <div>
+        <div class="nav-logo-text">BONSAI.exe</div>
+        <div class="nav-logo-sub">FTC ROBOTICS</div>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html#robot-section">ROBOT</a></li>
+      <li><a href="blog.html">BLOG</a></li>
+      <li><a href="gallery.html">GALLERY</a></li>
+      <li><a href="coaches.html">COACHES</a></li>
+      <li><a href="donation.html">DONATE</a></li>
+    </ul>
+    <a class="nav-cta" href="index.html#buildlog-section">FOLLOW BUILD →</a>
+    <button class="mobile-nav-toggle" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-nav-panel">
+      <span></span>
+    </button>
+    <div class="mobile-nav-panel" id="mobile-nav-panel" aria-label="Mobile navigation">
+      <a href="index.html#robot-section">ROBOT</a>
+      <a href="blog.html">BLOG</a>
+      <a href="gallery.html">GALLERY</a>
+      <a href="coaches.html">COACHES</a>
+      <a href="donation.html">DONATE</a>
+    </div>
+  </nav>
+
+  <main>
+    <header class="hero">
+      <div class="eyebrow">GALLERY</div>
+      <h1>Moments from the start,<br><strong>still being built.</strong></h1>
+      <p class="hero-copy">This page is still empty because we’re just beginning our team. We’re documenting our first ideas, first meetings, and first builds as we grow.</p>
+    </header>
+
+    <section class="empty-state">
+      <h2>We’re just getting started.</h2>
+      <p>Our gallery is currently a blank slate because our team is in the early stages of forming, learning, and building. As soon as we start prototyping and capturing our process, this space will fill with photos, milestones, and behind-the-scenes moments from our season.</p>
+    </section>
+
+    <div class="gallery-grid" id="gallery-grid">
+      <!-- Images loaded from content/season-2026.json -->
+    </div>
+
+    <script>
+    (async function(){
+      try{
+        const content = await (await fetch('content/season-2026.json')).json();
+        const imgs = (content.gallery && content.gallery.images) || [];
+        const showCaptions = content.gallery && content.gallery.showCaptions !== false;
+        const grid = document.getElementById('gallery-grid'); if (!grid) return;
+          if (imgs.length === 0) {
+            grid.innerHTML = Array.from({length:6}).map(()=>'<div class="photo-card"></div>').join('');
+            return;
+          }
+          // Support both string entries (legacy) and object entries with { src, caption }
+          grid.innerHTML = imgs.map(item => {
+            if (!item) return '<div class="photo-card"></div>';
+            if (typeof item === 'string') {
+              return `<div class="photo-card" style="background-image:url('${item}'); background-size:cover; background-position:center;"></div>`;
+            }
+            const src = item.src || item.image || '';
+            const caption = item.caption || item.title || '';
+            return `
+              <figure class="photo-card" style="background-image:url('${src}'); background-size:cover; background-position:center;">
+                ${showCaptions && caption ? `<figcaption style="position:absolute;left:12px;right:12px;bottom:12px;background:rgba(0,0,0,0.45);padding:8px 10px;border-radius:6px;font-size:13px;color:var(--ivory);">${caption}</figcaption>` : ''}
+              </figure>`;
+          }).join('');
+      }catch(e){ const grid = document.getElementById('gallery-grid'); if (grid) grid.innerHTML = Array.from({length:6}).map(()=>'<div class="photo-card"></div>').join(''); }
+    })();
+    const navToggle = document.querySelector('.mobile-nav-toggle');
+    const navPanel = document.getElementById('mobile-nav-panel');
+    if (navToggle && navPanel) {
+      navToggle.addEventListener('click', () => {
+        const open = navPanel.classList.toggle('open');
+        navToggle.setAttribute('aria-expanded', String(open));
+      });
+      navPanel.querySelectorAll('a').forEach((link) => {
+        link.addEventListener('click', () => {
+          navPanel.classList.remove('open');
+          navToggle.setAttribute('aria-expanded', 'false');
+        });
+      });
+    }
+    </script>
+  </main>
+
+  <footer>
+    <div><strong>BONSAI.exe</strong> • FTC ROBOTICS</div>
+    <div>SEASON 2026</div>
+  </footer>
+</body>
+</html>

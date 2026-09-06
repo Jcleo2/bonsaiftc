@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BONSAI.exe Outreach</title>
+  <meta name="description" content="BONSAI.exe outreach plans and community engagement initiatives as our team starts building." />
+  <style>
+    :root {
+      --obsidian: #0a0b0a;
+      --obsidian-2: #111412;
+      --obsidian-3: #181c18;
+      --sage: #8aa88a;
+      --sage-dim: #4d6f4f;
+      --sage-glow: rgba(138,168,138,0.12);
+      --emerald: #3aa568;
+      --gold: #b9a06a;
+      --gold-dim: rgba(185,160,106,0.12);
+      --ivory: #f0ede6;
+      --ivory-dim: #a8a49e;
+      --border: rgba(138,168,138,0.2);
+      --border-dim: rgba(138,168,138,0.08);
+      --ff-sans: 'Inter', 'SF Pro Display', system-ui, sans-serif;
+      --ff-mono: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--obsidian);
+      color: var(--ivory);
+      font-family: var(--ff-sans);
+      line-height: 1.6;
+    }
+    a { color: inherit; }
+    nav {
+      position: sticky; top: 0; z-index: 20; display: flex; align-items: center; justify-content: space-between;
+      padding: 20px 40px; background: rgba(10,11,10,0.85); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border-dim);
+    }
+    .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+    .nav-logo-mark { width: 28px; height: 28px; }
+    .nav-logo-mark svg { width: 100%; height: 100%; }
+    .nav-logo-text { font-size: 13px; letter-spacing: 0.12em; }
+    .nav-logo-sub { font-family: var(--ff-mono); font-size: 9px; letter-spacing: 0.2em; color: var(--sage); }
+    .nav-links { list-style: none; display: flex; gap: 26px; flex-wrap: wrap; }
+    .nav-links a { text-decoration: none; font-family: var(--ff-mono); font-size: 10px; letter-spacing: 0.16em; color: var(--ivory-dim); }
+    .nav-links a:hover { color: var(--sage); }
+    .nav-cta {
+      font-family: var(--ff-mono); font-size: 10px; letter-spacing: 0.16em; color: var(--ivory);
+      text-decoration: none; padding: 10px 18px; border: 1px solid var(--border); transition: border-color 0.2s, background 0.2s;
+    }
+    .nav-cta:hover { border-color: var(--sage); background: rgba(138,168,138,0.1); }
+
+    main { max-width: 1200px; margin: 0 auto; padding: 72px 24px 120px; }
+    .hero { border-bottom: 1px solid var(--border-dim); padding-bottom: 32px; margin-bottom: 48px; }
+    .eyebrow {
+      font-family: var(--ff-mono); font-size: 10px; letter-spacing: 0.28em; color: var(--sage); text-transform: uppercase; margin-bottom: 16px;
+    }
+    h1 {
+      font-size: clamp(40px, 7vw, 82px); line-height: 0.94; font-weight: 300; letter-spacing: -0.04em; margin-bottom: 20px;
+    }
+    h1 strong { color: var(--sage); font-weight: 700; }
+    .hero-copy { font-size: 18px; max-width: 720px; color: var(--ivory-dim); }
+
+    .empty-state {
+      margin-top: 36px; border: 1px solid var(--border-dim); background: rgba(255,255,255,0.01); padding: 28px;
+    }
+    .empty-state h2 {
+      font-size: 26px; margin-bottom: 8px; font-weight: 600;
+    }
+    .empty-state p {
+      color: var(--ivory-dim); max-width: 760px; line-height: 1.75;
+    }
+
+    .list {
+      display: grid; gap: 18px; margin-top: 40px;
+    }
+    .item {
+      border: 1px solid var(--border-dim); padding: 20px 22px; background: rgba(255,255,255,0.01);
+    }
+    .item-label {
+      font-family: var(--ff-mono); font-size: 9px; letter-spacing: 0.16em; color: var(--gold); margin-bottom: 10px;
+    }
+    .item h3 {
+      font-size: 22px; margin-bottom: 8px;
+    }
+    .item p { color: var(--ivory-dim); }
+
+    footer {
+      border-top: 1px solid var(--border-dim); padding: 28px 24px 40px; margin-top: 60px;
+      display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; color: var(--ivory-dim); font-family: var(--ff-mono); font-size: 10px; letter-spacing: 0.15em;
+    }
+    @media (max-width: 768px) {
+      nav { padding: 16px 20px; }
+      .nav-links { gap: 14px; }
+      .nav-cta { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <script>
+    window.location.replace('bonsai.exe.html');
+  </script>
+  <nav>
+    <a href="index.html" class="nav-logo">
+      <div class="nav-logo-mark">
+        <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <polygon points="16,2 30,10 30,22 16,30 2,22 2,10" fill="none" stroke="#7a9e7e" stroke-width="1"/>
+          <polygon points="16,8 24,12 24,20 16,24 8,20 8,12" fill="none" stroke="#3aa568" stroke-width="0.5" opacity="0.6"/>
+          <circle cx="16" cy="16" r="3" fill="#7a9e7e"/>
+        </svg>
+      </div>
+      <div>
+        <div class="nav-logo-text">BONSAI.exe</div>
+        <div class="nav-logo-sub">FTC ROBOTICS</div>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html#robot-section">ROBOT</a></li>
+      <li><a href="blog.html">BLOG</a></li>
+      <li><a href="gallery.html">GALLERY</a></li>
+      <li><a href="coaches.html">COACHES</a></li>
+      <li><a href="donation.html">DONATE</a></li>
+    </ul>
+    <a class="nav-cta" href="index.html#buildlog-section">FOLLOW BUILD →</a>
+  </nav>
+
+  <main>
+    <header class="hero">
+      <div class="eyebrow">OUTREACH</div>
+      <h1>Helping people see<br><strong>what’s possible.</strong></h1>
+      <p class="hero-copy">We are just beginning to build our team and our community presence. This page reflects where we are starting: small, early, and intentional work that helps students and neighbors get excited about STEM.</p>
+    </header>
+
+    <section class="empty-state">
+      <h2>We are building this program.</h2>
+      <p>Right now, our outreach work is in its early stages. We are establishing our team, learning how to serve our community best, and preparing to host our first workshops, demos, and mentorship opportunities. This page will grow as we begin those efforts.</p>
+    </section>
+
+    <div class="list">
+      <div class="item">
+        <div class="item-label">PHASE 01</div>
+        <h3>School and community introductions</h3>
+        <p>We are beginning by introducing our team to local students and community groups and sharing what robotics, engineering, and teamwork can look like in practice.</p>
+      </div>
+      <div class="item">
+        <div class="item-label">PHASE 02</div>
+        <h3>STEM engagement</h3>
+        <p>As our team grows, we plan to run workshops, answer questions, and help younger students explore design, coding, and problem solving in a hands-on way.</p>
+      </div>
+      <div class="item">
+        <div class="item-label">PHASE 03</div>
+        <h3>Mentorship and visibility</h3>
+        <p>We want to create accessible opportunities for students who are curious about robotics, engineering, and what it means to build together as a team.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div><strong>BONSAI.exe</strong> • FTC ROBOTICS</div>
+    <div>SEASON 2026</div>
+  </footer>
+  <script>
+  (async function(){
+    try{
+      const content = await (await fetch('content/season-2026.json')).json();
+      const notes = content.outreach && content.outreach.notes ? (Array.isArray(content.outreach.notes) ? content.outreach.notes.join('\n') : content.outreach.notes) : (content.community && content.community.notes ? content.community.notes.join('\n') : null);
+      if (notes) { const p = document.querySelector('.empty-state p'); if (p) p.textContent = notes; }
+    }catch(e){}
+  })();
+  </script>
+</body>
+</html>
