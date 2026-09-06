@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BONSAI.exe Robotics — FTC Team</title>
+<title>BONSAI.exe Robotics FTC 37209</title>
 <meta name="description" content="We build machines to solve problems. A FIRST Tech Challenge robotics team.">
 <meta property="og:title" content="BONSAI.exe Robotics">
 <meta property="og:description" content="We build machines to solve problems.">
@@ -308,6 +308,21 @@
   .hero-sub::before, .hero-sub::after {
     content: ''; flex: 1; height: 1px; background: var(--border);
     min-width: 40px;
+  }
+
+  .hero-number {
+    display: inline-flex; align-items: center; gap: 8px;
+    margin-top: 4px;
+    padding: 8px 20px;
+    border-radius: 999px;
+    font-family: var(--ff-mono); font-size: 13px; font-weight: 700;
+    letter-spacing: 0.22em; color: var(--obsidian);
+    background: linear-gradient(135deg, var(--sage) 0%, var(--emerald) 55%, var(--gold) 100%);
+    box-shadow: 0 0 0 1px var(--border), 0 8px 24px rgba(138,168,138,0.18);
+    opacity: 0; animation: slideUp 0.8s 3.15s var(--ease-out) forwards;
+  }
+  .hero-number-hash {
+    opacity: 0.65; font-weight: 400;
   }
 
   .hero-tagline {
@@ -1009,6 +1024,7 @@
     <div class="hero-wordmark">
       <h1 class="hero-name"><em>BONSAI.exe</em> </h1>
       <div class="hero-sub">FIRST TECH CHALLENGE &nbsp;•&nbsp; ROBOTICS</div>
+      <div class="hero-number"><span class="hero-number-hash">#</span>37209</div>
     </div>
     <p class="hero-tagline">
       We build machines to solve problems. The robot doesn't exist yet. Good.
