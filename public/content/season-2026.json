@@ -16,7 +16,7 @@
     { "order": 4, "slug": "compete", "title": "COMPETE", "description": "Regional qualifier and championship events.", "status": "planned" },
     { "order": 5, "slug": "archive", "title": "ARCHIVE", "description": "Season documented. Lessons captured. Next year begins.", "status": "planned" }
   ],
-  "engineering_note": "No design commitment has been made. This is intentional. Premature commitment to a concept is how teams end up rebuilding in Week 5.",
+  "engineering_note": "At least we know who our teammates are, if nothing else",
   "engineering_log": [
     {
       "date": "2026-08-30",
