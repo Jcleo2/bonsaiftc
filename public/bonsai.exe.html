@@ -919,6 +919,93 @@
     animation: dotPulse 2s ease-in-out infinite;
   }
 
+  /* ─── TEXT SIZE TOGGLE ───────────────────── */
+  #text-size-toggle {
+    position: fixed;
+    bottom: 28px;
+    right: 28px;
+    z-index: 200;
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    background: rgba(17,20,18,0.92);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 6px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+    cursor: none;
+  }
+  #text-size-toggle:hover { border-color: var(--sage); }
+  .tst-label {
+    font-family: var(--ff-mono);
+    font-size: 9px;
+    letter-spacing: 0.15em;
+    color: var(--ivory-dim);
+    padding: 0 10px 0 12px;
+    white-space: nowrap;
+    user-select: none;
+  }
+  .tst-btn {
+    font-family: var(--ff-sans);
+    font-weight: 700;
+    color: var(--ivory-dim);
+    background: transparent;
+    border: 1px solid transparent;
+    border-radius: 999px;
+    width: 34px; height: 34px;
+    display: inline-flex; align-items: center; justify-content: center;
+    cursor: none;
+    transition: background 0.2s, color 0.2s, border-color 0.2s;
+  }
+  .tst-btn:hover { color: var(--ivory); border-color: var(--border); }
+  .tst-btn.active {
+    color: var(--obsidian);
+    background: linear-gradient(135deg, var(--sage) 0%, var(--gold) 100%);
+  }
+  .tst-btn.reset { font-size: 12px; }
+  .tst-btn.step { font-size: 16px; }
+  .tst-btn.step.big { font-size: 20px; }
+
+  @media (max-width: 768px) {
+    #text-size-toggle { bottom: 18px; right: 18px; }
+    .tst-label { display: none; }
+  }
+
+  /* Applied text-scale states (toggled on <html>) */
+  html.text-scale-1 { font-size: 18px; }
+  html.text-scale-2 { font-size: 20px; }
+  html.text-scale-1 body, html.text-scale-2 body { line-height: 1.65; }
+  /* Rescale the handful of hard-coded px sizes so the boost actually reaches them */
+  html.text-scale-1 .hero-tagline,
+  html.text-scale-1 .robot-info p,
+  html.text-scale-1 .portfolio-text,
+  html.text-scale-1 .member-focus,
+  html.text-scale-1 .impact-card p,
+  html.text-scale-1 .impact-list li,
+  html.text-scale-1 .log-entry-body,
+  html.text-scale-1 .compete-event-detail,
+  html.text-scale-1 .phase-desc { font-size: 1.15em; line-height: 1.75; }
+  html.text-scale-2 .hero-tagline,
+  html.text-scale-2 .robot-info p,
+  html.text-scale-2 .portfolio-text,
+  html.text-scale-2 .member-focus,
+  html.text-scale-2 .impact-card p,
+  html.text-scale-2 .impact-list li,
+  html.text-scale-2 .log-entry-body,
+  html.text-scale-2 .compete-event-detail,
+  html.text-scale-2 .phase-desc { font-size: 1.3em; line-height: 1.85; }
+  html.text-scale-1 .section-heading,
+  html.text-scale-2 .section-heading { font-size: 1.15em; }
+  html.text-scale-1 .nav-links a,
+  html.text-scale-1 .member-name,
+  html.text-scale-1 .timeline-title,
+  html.text-scale-1 .log-entry-title { font-size: 1.15em; }
+  html.text-scale-2 .nav-links a,
+  html.text-scale-2 .member-name,
+  html.text-scale-2 .timeline-title,
+  html.text-scale-2 .log-entry-title { font-size: 1.3em; }
+
   /* ─── SCANLINE EFFECT ────────────────────── */
   .scanline {
     position: fixed; top: 0; left: 0; right: 0; height: 2px;
@@ -944,6 +1031,14 @@
 
 <!-- Scanline -->
 <div class="scanline"></div>
+
+<!-- Text Size Toggle -->
+<div id="text-size-toggle" role="group" aria-label="Adjust text size">
+  <span class="tst-label">TEXT SIZE</span>
+  <button type="button" class="tst-btn reset" data-scale="0" aria-label="Default text size" title="Default text size">A</button>
+  <button type="button" class="tst-btn step" data-scale="1" aria-label="Larger text" title="Larger text">A</button>
+  <button type="button" class="tst-btn step big" data-scale="2" aria-label="Largest text" title="Largest text">A</button>
+</div>
 
 <!-- Loader -->
 <div id="loader">
@@ -1534,7 +1629,7 @@ function updateCursor() {
 }
 updateCursor();
 
-document.querySelectorAll('a,button,.subsystem-card,.team-member,.timeline-entry').forEach(el => {
+document.querySelectorAll('a,button,.subsystem-card,.team-member,.timeline-entry,.tst-btn').forEach(el => {
   el.addEventListener('mouseenter', () => document.body.classList.add('hovering'));
   el.addEventListener('mouseleave', () => document.body.classList.remove('hovering'));
 });
@@ -1557,6 +1652,32 @@ const loaderInterval = setInterval(() => {
     }, 400);
   }
 }, 550);
+
+/* ─── TEXT SIZE TOGGLE ───────────────────────── */
+(function(){
+  const root = document.documentElement;
+  const buttons = document.querySelectorAll('.tst-btn');
+  const STORAGE_KEY = 'bonsai-text-scale';
+
+  function applyScale(level) {
+    root.classList.remove('text-scale-1', 'text-scale-2');
+    if (level === 1) root.classList.add('text-scale-1');
+    if (level === 2) root.classList.add('text-scale-2');
+    buttons.forEach(b => b.classList.toggle('active', Number(b.dataset.scale) === level));
+  }
+
+  let saved = 0;
+  try { saved = parseInt(localStorage.getItem(STORAGE_KEY), 10) || 0; } catch(e) {}
+  applyScale(saved);
+
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const level = Number(btn.dataset.scale);
+      applyScale(level);
+      try { localStorage.setItem(STORAGE_KEY, String(level)); } catch(e) {}
+    });
+  });
+})();
 
 /* ─── NAV SCROLL ────────────────────────────── */
 const nav = document.getElementById('nav');
