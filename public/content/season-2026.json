@@ -34,7 +34,7 @@
     { "name": "Joel", "role": "Mentor", "bio": "TBD", "photo": "pngs/coaches/scout.png" },
     { "name": "Izzy", "role": "Mentor", "bio": "This is my 4th year of being a programmer in FTC and I'm on team 19458 Equilibrium.exe.", "photo": "pngs/coaches/izzy.png" },
     { "name": "Owen", "role": "Mentor", "bio": "I’m Owen, a senior at the Walt Whitman HS. I’ve participated in FIRST since I was 7 and am currently part of FTC team Equilibrium.exe. I also love to rock climb and sail.", "photo": "images/coaches/owen.jpg" },
-    { "name": "Thomas", "role": "Mentor", "bio": "TBD", "photo": "pngs/coaches/morgan.png" }
+    { "name": "Thomas", "role": "Mentor", "bio": "TBD", "photo": "pngs/coaches/thomas.png" }
   ],
 
   "team": [
