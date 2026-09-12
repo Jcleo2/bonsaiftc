@@ -11,19 +11,19 @@
   },
   "journey_phases": [
     { "order": 1, "slug": "initialization", "title": "INITIALIZATION", "description": "First Team meeting, figuring out parts, determining strategies.", "status": "active" },
-    { "order": 2, "slug": "design", "title": "DESIGN", "description": " Game released. CAD, prototyping strategy, and early system decisions.", "status": "planned" },
+    { "order": 2, "slug": "design", "title": "START/DESIGN", "description": " Game released. CAD, prototyping strategy, and early system decisions.", "status": "active" },
     { "order": 3, "slug": "build", "title": "BUILD", "description": "Fabrication, iteration, testing, and revision.", "status": "planned" },
     { "order": 4, "slug": "compete", "title": "COMPETE", "description": "Regional qualifier and championship events.", "status": "planned" },
     { "order": 5, "slug": "archive", "title": "ARCHIVE", "description": "Season documented. Lessons captured. Next year begins.", "status": "planned" }
   ],
-  "engineering_note": "At least we know who our teammates are, if nothing else",
+  "engineering_note": "dont know what to say. hi ig",
   "engineering_log": [
     {
-      "date": "2026-08-30",
-      "title": "Season Kickoff",
+      "date": "2026-09-12",
+      "title": "Game Reveal",
       "phase": "INITIALIZATION",
-      "status": "INIT",
-      "notes": "BONSAI.exe team kickoff meeting. Introduced the game, discussed strategies, and assigned initial roles.",
+      "status": "START/DESIGN",
+      "notes": "Kit shipping, started building, and im starting to sound like ai :smiley",
       "pending": ["First CAD", "Prototype 01", "First Competition"]
     }
   ],
@@ -60,8 +60,7 @@
       { "title": "Mock Season Done", "date": "2026-08-06", "summary": "Mock Season Done. Thanks to Equilibrium.exe and everyone else for hosting!", "image": "pngs/blog/season_kickoff.png" },
       { "title": "First Meeting", "date": "2026-08-30", "summary": "Our first meeting and goals.", "image": "pngs/blog/community_workshop.png" }
     ]
-  },
-  "gallery": {
+  },  "gallery": {
     "showCaptions": true,
     "images": [
       { "src": "pngs/gallery/shot1.png", "caption": "The first build meeting." },
